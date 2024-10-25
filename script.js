@@ -13,8 +13,11 @@ checkButton.addEventListener("click", () => {
         // Pass all words to lower case
         const inputValueLowerCase = inputValue.toLowerCase();
 
+        // Transform words to arrays
         const inputArray = Array.from(inputValueLowerCase);
         const reversedArray = inputArray.toReversed();
+        
+        // Check if working
         alert(inputArray)
         alert(`Array reverso: ${reversedArray}`);
     } else {
