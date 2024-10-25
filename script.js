@@ -5,6 +5,12 @@ const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
 const regexp = /([A-Z]|[a-z])\w+/;
 
+const printWorking = (inputArray, reversedArray) => {
+    // Check if working
+    alert(inputArray)
+    alert(`Array reverso: ${reversedArray}`);
+}
+
 const emptyInputContent = (textInput) => {
     // This will empty the input
     textInput.value = "";
@@ -24,9 +30,7 @@ const checkIfItIsAPalindrome = (textInput) => {
         const inputArray = Array.from(inputValueLowerCase);
         const reversedArray = inputArray.toReversed();
 
-        // Check if working
-        alert(inputArray)
-        alert(`Array reverso: ${reversedArray}`);
+        printWorking(inputArray, reversedArray);
     } else {
         alert("Please input a value");
     }
