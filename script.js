@@ -1,9 +1,7 @@
-// capture only words (regexp)
 // don't show sugestions
 
 const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
-const regexp = /([A-Z]|[a-z])\w+/;
 
 const printWorking = (inputArray, reversedArray) => {
     // Check if working
@@ -16,12 +14,20 @@ const emptyInputContent = (textInput) => {
     textInput.value = "";
 };
 
+const captureOnlyLetters = (inputValue) => {
+    // Capture only words (regexp)
+    const regexp = /[A-Za-zÀ-ÿ]+/g;;
+    return inputValue.match(regexp);
+}
+
 const checkIfItIsAPalindrome = (textInput) => {
     const inputValue = textInput.value;
 
     // Checks if something was typed in the input
     if (inputValue) {
         emptyInputContent(textInput);
+
+        console.log(`Os itens capturados no regexp são: \n${captureOnlyLetters(inputValue)}`);
 
         // Pass all words to lower case
         const inputValueLowerCase = inputValue.toLowerCase();
