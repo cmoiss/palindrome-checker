@@ -1,19 +1,10 @@
-// When press "enter", execute
 // capture only words (regexp)
 // don't show sugestions
 
 const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
 
-
-textInput.addEventListener("keypress", () => {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        alert("Raleu mofi");
-    }
-});
-
-checkButton.addEventListener("click", () => {
+const checkIfItIsAPalindrome = (textInput) => {
     const inputValue = textInput.value;
 
     // Checks if something was typed in the input
@@ -33,4 +24,16 @@ checkButton.addEventListener("click", () => {
     } else {
         alert("Please input a value");
     }
+}
+
+textInput.addEventListener("keypress", () => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        checkIfItIsAPalindrome(textInput)
+    }
+});
+
+checkButton.addEventListener("click", () => {
+    event.preventDefault();
+    checkIfItIsAPalindrome(textInput);
 });
