@@ -2,12 +2,13 @@
 
 const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
+const resultBlock = document.querySelector("#result");
 
-const printWorking = (inputArray, reversedArray) => {
-    // Check if working
-    alert(inputArray)
-    alert(`reverse: ${reversedArray}`);
-}
+// const printWorking = (inputArray, reversedArray) => {
+//     // Check if working
+//     alert(inputArray)
+//     alert(`reverse: ${reversedArray}`);
+// }
 
 const emptyInputContent = (textInput) => {
     // This will empty the input
@@ -31,8 +32,8 @@ const checkIfItIsAPalindrome = (textInput) => {
 
         const inputValueOnlyLetters = captureOnlyLetters(inputValue)
         
-        // test only
-        alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
+        // // test only
+        // alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
 
         // Pass all words to lower case
         const inputValueLowerCase = inputValueOnlyLetters.toString().toLowerCase();
@@ -48,7 +49,7 @@ const checkIfItIsAPalindrome = (textInput) => {
             isPalindrome = true;
         }
 
-        printWorking(inputArray, reversedArray);
+        // printWorking(inputArray, reversedArray);
 
         return isPalindrome;
     } else {
@@ -57,10 +58,11 @@ const checkIfItIsAPalindrome = (textInput) => {
 };
 
 const printResult = () => {
+    const inputValue = textInput.value;
     if (checkIfItIsAPalindrome(textInput)) {
-        alert("É pal");
+        resultBlock.innerHTML = `<strong>${inputValue}</strong> is a polindrome`;
     } else {
-        alert("Qisso ga");
+        resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a polindrome`;
     }
 }
 
