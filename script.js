@@ -1,4 +1,3 @@
-// This will empty the input
 // capture only words (regexp)
 // don't show sugestions
 
@@ -6,11 +5,18 @@ const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
 const regexp = /([A-Z]|[a-z])\w+/;
 
+const emptyInputContent = (textInput) => {
+    // This will empty the input
+    textInput.value = "";
+};
+
 const checkIfItIsAPalindrome = (textInput) => {
     const inputValue = textInput.value;
 
     // Checks if something was typed in the input
     if (inputValue) {
+        emptyInputContent(textInput);
+
         // Pass all words to lower case
         const inputValueLowerCase = inputValue.toLowerCase();
 
@@ -24,7 +30,7 @@ const checkIfItIsAPalindrome = (textInput) => {
     } else {
         alert("Please input a value");
     }
-}
+};
 
 textInput.addEventListener("keypress", () => {
     if (event.key === "Enter") {
