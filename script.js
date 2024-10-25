@@ -27,10 +27,13 @@ const checkIfItIsAPalindrome = (textInput) => {
     if (inputValue) {
         emptyInputContent(textInput);
 
-        console.log(`Os itens capturados no regexp são: \n${captureOnlyLetters(inputValue)}`);
+        const inputValueOnlyLetters = captureOnlyLetters(inputValue)
+        
+        // test only
+        alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
 
         // Pass all words to lower case
-        const inputValueLowerCase = inputValue.toLowerCase();
+        const inputValueLowerCase = inputValueOnlyLetters.toString().toLowerCase();
 
         // Transform words to arrays
         const inputArray = Array.from(inputValueLowerCase);
