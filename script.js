@@ -6,7 +6,7 @@ const checkButton = document.querySelector("#check-btn");
 const printWorking = (inputArray, reversedArray) => {
     // Check if working
     alert(inputArray)
-    alert(`Array reverso: ${reversedArray}`);
+    alert(`reverse: ${reversedArray}`);
 }
 
 const emptyInputContent = (textInput) => {
@@ -17,7 +17,7 @@ const emptyInputContent = (textInput) => {
 const captureOnlyLetters = (inputValue) => {
     // Capture only words (regexp)
     const regexp = /[A-Za-zÀ-ÿ]+/g;;
-    return inputValue.match(regexp);
+    return inputValue.match(regexp);{}
 }
 
 const checkIfItIsAPalindrome = (textInput) => {
@@ -25,6 +25,8 @@ const checkIfItIsAPalindrome = (textInput) => {
 
     // Checks if something was typed in the input
     if (inputValue) {
+        let isPalindrome = false;
+
         emptyInputContent(textInput);
 
         const inputValueOnlyLetters = captureOnlyLetters(inputValue)
@@ -39,20 +41,37 @@ const checkIfItIsAPalindrome = (textInput) => {
         const inputArray = Array.from(inputValueLowerCase);
         const reversedArray = inputArray.toReversed();
 
+        const input = inputArray.toString();
+        const reversedInput = reversedArray.toString();
+
+        if (input === reversedInput) {
+            isPalindrome = true;
+        }
+
         printWorking(inputArray, reversedArray);
+
+        return isPalindrome;
     } else {
         alert("Please input a value");
     }
 };
 
+const printResult = () => {
+    if (checkIfItIsAPalindrome(textInput)) {
+        alert("É pal");
+    } else {
+        alert("Qisso ga");
+    }
+}
+
 textInput.addEventListener("keypress", () => {
     if (event.key === "Enter") {
         event.preventDefault();
-        checkIfItIsAPalindrome(textInput)
+        printResult()
     }
 });
 
 checkButton.addEventListener("click", () => {
     event.preventDefault();
-    checkIfItIsAPalindrome(textInput);
+    printResult();
 });
