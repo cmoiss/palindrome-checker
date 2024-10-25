@@ -1,8 +1,10 @@
+// This will empty the input
 // capture only words (regexp)
 // don't show sugestions
 
 const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
+const regexp = /([A-Z]|[a-z])\w+/;
 
 const checkIfItIsAPalindrome = (textInput) => {
     const inputValue = textInput.value;
@@ -11,8 +13,6 @@ const checkIfItIsAPalindrome = (textInput) => {
     if (inputValue) {
         // Pass all words to lower case
         const inputValueLowerCase = inputValue.toLowerCase();
-
-        // ([A-Z]|[a-z])\w+
 
         // Transform words to arrays
         const inputArray = Array.from(inputValueLowerCase);
