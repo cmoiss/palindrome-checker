@@ -1,9 +1,9 @@
-// don't show sugestions
-
+// === DOM Elements ===
 const textInput = document.querySelector("#text-input");
 const checkButton = document.querySelector("#check-btn");
 const resultBlock = document.querySelector("#result");
 
+// === Functions ===
 // const printWorking = (inputArray, reversedArray) => {
 //     // Check if working
 //     alert(inputArray)
@@ -66,6 +66,7 @@ const printResult = () => {
     }
 }
 
+// === Event Listeners ===
 textInput.addEventListener("keypress", () => {
     if (event.key === "Enter") {
         event.preventDefault();
