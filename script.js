@@ -32,8 +32,8 @@ const checkIfItIsAPalindrome = (textInput) => {
 
         const inputValueOnlyLetters = captureOnlyLetters(inputValue)
         
-        // // test only
-        alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
+        // // // test only
+        // alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
 
         // Pass all words to lower case
         const inputValueLowerCase = inputValueOnlyLetters.toString().toLowerCase();
@@ -53,8 +53,8 @@ const checkIfItIsAPalindrome = (textInput) => {
             isPalindrome = true;
         }
 
-        console.log(inputArray);
-        printWorking(inputArray, reversedArray);
+        // console.log(inputArray);
+        // printWorking(inputArray, reversedArray);
 
         return isPalindrome;
     } else {
