@@ -59,18 +59,25 @@ const checkIfItIsAPalindrome = (textInput) => {
 
         return isPalindrome;
     } else {
-        alert("Please input a value");
+        // Exit function if input is empty
+        return;
     }
 };
 
 const printResult = () => {
     const inputValue = textInput.value;
-    resultBlock.classList.remove("hide");
 
-    if (checkIfItIsAPalindrome(textInput)) {
-        resultBlock.innerHTML = `<strong>${inputValue}</strong> is a palindrome`;
+    // Checks if something was typed in the input
+    if (inputValue) {
+        resultBlock.classList.remove("hide");
+
+        if (checkIfItIsAPalindrome(textInput)) {
+            resultBlock.innerHTML = `<strong>${inputValue}</strong> is a palindrome`;
+        } else {
+            resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a palindrome`;
+        }
     } else {
-        resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a palindrome`;
+        alert("Please input a value");
     }
 }
 
