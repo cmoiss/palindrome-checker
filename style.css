@@ -17,6 +17,7 @@
 }
 
 body {
+    min-height: 100svh;
     background-color: var(--dark-blue);
     padding: 4rem;
 }
@@ -34,13 +35,15 @@ body {
 }
 
 .input-block {
+    /* outline: solid rgb(21, 241, 223); */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    outline: solid rgb(21, 241, 223);
     background-color: white;
     padding: 1rem 2rem 1.5rem 2rem;
     gap: 1.5rem;
+    border-radius: 1.25em;
+    box-shadow: #002ead 0px 3px 13px 1px;
     /* min-width: 50%; */
     /* min-height: 15svh; */
 }
