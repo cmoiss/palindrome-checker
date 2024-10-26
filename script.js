@@ -65,6 +65,8 @@ const checkIfItIsAPalindrome = (textInput) => {
 
 const printResult = () => {
     const inputValue = textInput.value;
+    resultBlock.classList.remove("hide");
+
     if (checkIfItIsAPalindrome(textInput)) {
         resultBlock.innerHTML = `<strong>${inputValue}</strong> is a polindrome`;
     } else {

@@ -11,6 +11,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.hide {
+    display: none;
+}
+
 /* flexbox */
 .wrapper, .input-block {
     display: flex;
