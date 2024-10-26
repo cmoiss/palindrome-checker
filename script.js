@@ -38,8 +38,12 @@ const checkIfItIsAPalindrome = (textInput) => {
         // Pass all words to lower case
         const inputValueLowerCase = inputValueOnlyLetters.toString().toLowerCase();
 
+        // Remove graphic accents
+        const inputValueWithoutAccents = inputValueLowerCase.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        console.log(inputValueWithoutAccents);
+
         // Transform words to arrays
-        const inputArray = Array.from(inputValueLowerCase).filter((letter) => letter !== ",");
+        const inputArray = Array.from(inputValueWithoutAccents).filter((letter) => letter !== ",");
         const reversedArray = inputArray.toReversed();
 
         const input = inputArray.toString();
