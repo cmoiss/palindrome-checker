@@ -68,9 +68,9 @@ const printResult = () => {
     resultBlock.classList.remove("hide");
 
     if (checkIfItIsAPalindrome(textInput)) {
-        resultBlock.innerHTML = `<strong>${inputValue}</strong> is a polindrome`;
+        resultBlock.innerHTML = `<strong>${inputValue}</strong> is a palindrome`;
     } else {
-        resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a polindrome`;
+        resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a palindrome`;
     }
 }
 
