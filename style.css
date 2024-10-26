@@ -1,6 +1,28 @@
+:root {
+    --dark-blue: #0A0A23;
+    --purple: #5A01A7;
+    --green: #00471B;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--dark-blue);
+    padding: 4rem;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* outline: solid red; */
+}
+
+.wrapper h1 {
+    color: white;
 }
