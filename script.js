@@ -17,9 +17,22 @@ const emptyInputContent = (textInput) => {
 
 const captureOnlyLetters = (inputValue) => {
     // Capture only words (regexp)
-    const regexp = /[A-Za-zÀ-ÿ]+/g;;
-    return inputValue.match(regexp);{}
+    const regexp = /[A-Za-zÀ-ÿ]+/g;
+    return inputValue.match(regexp);
 }
+
+const textProcessing = (text) => {
+    // Capture only letters
+    const textOnlyLetters = captureOnlyLetters(text)
+
+    // Pass all words to lower case
+    const textLowerCase = textOnlyLetters.toString().toLowerCase();
+
+    // Remove graphic accents
+    const textWithoutAccents = textLowerCase.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    return textWithoutAccents;
+};
 
 const checkIfItIsAPalindrome = (textInput) => {
     const inputValue = textInput.value;
@@ -30,20 +43,8 @@ const checkIfItIsAPalindrome = (textInput) => {
 
         emptyInputContent(textInput);
 
-        const inputValueOnlyLetters = captureOnlyLetters(inputValue)
-        
-        // // // test only
-        // alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
-
-        // Pass all words to lower case
-        const inputValueLowerCase = inputValueOnlyLetters.toString().toLowerCase();
-
-        // Remove graphic accents
-        const inputValueWithoutAccents = inputValueLowerCase.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        console.log(inputValueWithoutAccents);
-
         // Transform words to arrays
-        const inputArray = Array.from(inputValueWithoutAccents).filter((letter) => letter !== ",");
+        const inputArray = Array.from(textProcessing(inputValue)).filter((letter) => letter !== ",");
         const reversedArray = inputArray.toReversed();
 
         const input = inputArray.toString();
