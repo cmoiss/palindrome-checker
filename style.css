@@ -23,6 +23,13 @@ body {
     /* outline: solid red; */
 }
 
-.wrapper h1 {
+.wrapper h1,
+.wrapper p {
     color: white;
+}
+
+.palindrome-explanation {
+    background-color: var(--green);
+    padding: 2rem;
+    border-radius: 1.5em;
 }
