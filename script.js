@@ -4,11 +4,11 @@ const checkButton = document.querySelector("#check-btn");
 const resultBlock = document.querySelector("#result");
 
 // === Functions ===
-// const printWorking = (inputArray, reversedArray) => {
-//     // Check if working
-//     alert(inputArray)
-//     alert(`reverse: ${reversedArray}`);
-// }
+const printWorking = (inputArray, reversedArray) => {
+    // Check if working
+    alert(inputArray)
+    alert(`reverse: ${reversedArray}`);
+}
 
 const emptyInputContent = (textInput) => {
     // This will empty the input
@@ -33,13 +33,13 @@ const checkIfItIsAPalindrome = (textInput) => {
         const inputValueOnlyLetters = captureOnlyLetters(inputValue)
         
         // // test only
-        // alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
+        alert(`Os itens capturados no regexp são: \n${inputValueOnlyLetters}`);
 
         // Pass all words to lower case
         const inputValueLowerCase = inputValueOnlyLetters.toString().toLowerCase();
 
         // Transform words to arrays
-        const inputArray = Array.from(inputValueLowerCase);
+        const inputArray = Array.from(inputValueLowerCase).filter((letter) => letter !== ",");
         const reversedArray = inputArray.toReversed();
 
         const input = inputArray.toString();
@@ -49,7 +49,8 @@ const checkIfItIsAPalindrome = (textInput) => {
             isPalindrome = true;
         }
 
-        // printWorking(inputArray, reversedArray);
+        console.log(inputArray);
+        printWorking(inputArray, reversedArray);
 
         return isPalindrome;
     } else {
