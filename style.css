@@ -18,6 +18,7 @@
 /* flexbox */
 body,
 .wrapper,
+main,
 .input-block,
 .input-field {
     display: flex;
@@ -29,9 +30,11 @@ body,
 }
 
 .wrapper,
+main,
 .input-block {
     flex-direction: column;
 }
+
 
 body {
     min-height: 100svh;
@@ -42,7 +45,7 @@ body {
 .wrapper {
     /* outline: solid red; */
     align-items: center;
-    gap: 1rem;
+    gap: 2.5rem;
     max-width: 28rem;
 }
 
@@ -50,6 +53,10 @@ body {
 .wrapper p:not(#enter-text, #result),
 #check-btn {
     color: white;
+}
+
+main {
+    gap: 1.8rem;
 }
 
 .input-block {

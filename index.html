@@ -10,19 +10,23 @@
 
 <body>
     <div class="wrapper">
-        <h1>Is it a Palindrome?</h1>
-        <div class="input-block">
-            <p id="enter-text">Enter in text to check for a palindrome:</p>
-            <div class="input-field">
-                <input type="text" id="text-input" autocomplete="off">
-                <button id="check-btn">Check</button>
+        <header>
+            <h1>Is it a Palindrome?</h1>
+        </header>
+        <main>
+            <div class="input-block">
+                <p id="enter-text">Enter in text to check for a palindrome:</p>
+                <div class="input-field">
+                    <input type="text" id="text-input" autocomplete="off">
+                    <button id="check-btn">Check</button>
+                </div>
+                <p class="hide" id="result">Teste</p>
             </div>
-            <p class="hide" id="result">Teste</p>
-        </div>
-        <div class="palindrome-explanation">
-            <p>&#128161; A <em>palindrome</em> is a word or sentence that's spelled the same way both forward and backward,
-                ignoring punctuation, case, and spacing.</p>
-        </div>
+            <div class="palindrome-explanation">
+                <p>&#128161; A <em>palindrome</em> is a word or sentence that's spelled the same way both forward and backward,
+                    ignoring punctuation, case, and spacing.</p>
+            </div>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>
