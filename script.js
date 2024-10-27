@@ -18,7 +18,7 @@ const emptyInputContent = (textInput) => {
 const captureOnlyLetters = (inputValue) => {
     // Capture only words (regexp)
     const regexp = /[A-Za-zÀ-ÿ]+/g;
-    return inputValue.match(regexp);
+    return inputValue.match(regexp) || [];
 }
 
 const textProcessing = (text) => {
@@ -26,7 +26,7 @@ const textProcessing = (text) => {
     const textOnlyLetters = captureOnlyLetters(text)
 
     // Pass all words to lower case
-    const textLowerCase = textOnlyLetters.toString().toLowerCase();
+    const textLowerCase = textOnlyLetters.join('').toLowerCase();
 
     // Remove graphic accents
     const textWithoutAccents = textLowerCase.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
