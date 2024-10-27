@@ -29,6 +29,12 @@ body,
     justify-content: center;
 }
 
+body,
+.wrapper,
+.input-block {
+    align-items: center;
+}
+
 .wrapper,
 main,
 .input-block {
@@ -46,8 +52,6 @@ body {
 }
 
 .wrapper {
-    /* outline: solid red; */
-    align-items: center;
     gap: 2.5rem;
     max-width: 28rem;
 }
@@ -63,9 +67,6 @@ main {
 }
 
 .input-block {
-    /* outline: solid rgb(21, 241, 223); */
-    /* flex-direction: column; */
-    align-items: center;
     background-color: white;
     padding: 1.5rem 2rem 1.8rem 2rem;
     gap: 1.5rem;
@@ -75,7 +76,6 @@ main {
 }
 
 .input-field {
-    /* outline: solid rgb(255, 0, 0); */
     min-width: 85%;
     min-height: 50%;
     justify-content: space-between;
