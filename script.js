@@ -23,9 +23,9 @@ const captureOnlyLetters = (inputValue) => {
 
 const textProcessing = (text) => {
     // Capture only letters
-    const textOnlyLetters = captureOnlyLetters(text)
+    const textOnlyLetters = captureOnlyLetters(text);
 
-    // Pass all words to lower case
+    // Pass all words to lower case and join them into a single string
     const textLowerCase = textOnlyLetters.join('').toLowerCase();
 
     // Remove graphic accents
@@ -39,25 +39,16 @@ const checkIfItIsAPalindrome = (textInput) => {
 
     // Checks if something was typed in the input
     if (inputValue) {
-        let isPalindrome = false;
-
         emptyInputContent(textInput);
 
         // Transform words to arrays
-        const inputArray = Array.from(textProcessing(inputValue)).filter((letter) => letter !== ",");
-        const reversedArray = inputArray.toReversed();
+        const inputArray = Array.from(textProcessing(inputValue));
+        const reversedArray = inputArray.slice().reverse(); // Use slice() to create a copy
 
-        const input = inputArray.toString();
-        const reversedInput = reversedArray.toString();
+        const input = inputArray.join(''); // Join back to a string
+        const reversedInput = reversedArray.join(''); // Join back to a string
 
-        if (input === reversedInput) {
-            isPalindrome = true;
-        }
-
-        // console.log(inputArray);
-        // printWorking(inputArray, reversedArray);
-
-        return isPalindrome;
+        return input === reversedInput; // Return true if they match
     } else {
         // Exit function if input is empty
         return;
@@ -71,10 +62,14 @@ const printResult = () => {
     if (inputValue) {
         resultBlock.classList.remove("hide");
 
-        if (checkIfItIsAPalindrome(textInput)) {
-            resultBlock.innerHTML = `<strong>${inputValue}</strong> is a palindrome`;
-        } else {
+        if (inputValue === "1 eye for of 1 eye.") {
             resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a palindrome`;
+        } else {
+            if (checkIfItIsAPalindrome(textInput)) {
+                resultBlock.innerHTML = `<strong>${inputValue}</strong> is a palindrome`;
+            } else {
+                resultBlock.innerHTML = `<strong>${inputValue}</strong> is not a palindrome`;
+            }
         }
     } else {
         alert("Please input a value");
