@@ -91,7 +91,10 @@ body {
 }
 
 .palindrome-explanation {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
     background-color: var(--green);
     padding: 2rem;
-    border-radius: 1.5em;
+    border-radius: 1.2em;
 }
